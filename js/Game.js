@@ -46,7 +46,7 @@ class Game {
     Player.getPlayerInfo();
     
     if(allPlayers !== undefined){
-      background(rgb(198,135,103));
+      background(rgb(80, 80, 80));
       image(track, 0,-displayHeight*4,displayWidth, displayHeight*5);
       
       //var display_position = 100;
@@ -70,13 +70,14 @@ class Game {
         cars[index-1].y = y;
 
         if (index === player.index){
-          cars[index - 1].shapeColor = "red";
+          fill("Blue");
+          ellipse(x, y, 80, 80);
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y;
         }
-       
-        //textSize(15);
-        //text(allPlayers[plr].name + ": " + allPlayers[plr].distance, 120,display_position)
+       textAlign(CENTER);
+        textSize(15);
+        text(allPlayers[plr].name, cars[index-1].x, cars[index-1].y+70)
       }
 
     }
